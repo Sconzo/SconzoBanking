@@ -10,7 +10,21 @@ namespace SconzoBank
     {
         static void Main(string[] args)
         {
+            try
+            {
+                var conta = new Conta(0, 011, 111);
+            }
+            catch (ArgumentException e)
+            {
+
+                Console.WriteLine(e.Message);
+            }
+           
             
+            
+            
+
+            Console.Read();
         }
     }
 }
