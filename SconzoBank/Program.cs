@@ -14,6 +14,7 @@ namespace SconzoBank
             try
             {
                 var conta = new Conta(2, 011, 1100);
+                Console.WriteLine($"Conta criada com sucesso");
             }
             catch (ArgumentException e)
             {
