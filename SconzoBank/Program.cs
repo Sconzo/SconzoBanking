@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SconzoBank.Modelos;
+using SconzoBank.Modelos.Funcionarios;
 
 namespace SconzoBank
 {
@@ -13,8 +14,22 @@ namespace SconzoBank
         {
             try
             {
-                var conta = new Conta(2, 011, 1100);
-                Console.WriteLine($"Conta criada com sucesso");
+                var fun1 = new Estagiario("Rodrigo","001");
+                var fun2 = new Estagiario("Sergio", "002");
+                var fun3 = new Estagiario("Soely", "003");
+                var fun4 = new Estagiario("Marina", "004");
+                var fun5 = new Estagiario("José", "005");
+                var fun6 = new Estagiario("Rosa", "006");
+
+                fun6.ImprimirInformacoesFuncionario();
+                fun6.AumentarSalario();
+                fun6.ImprimirInformacoesFuncionario();
+                fun6.Promover();
+                fun6.ImprimirInformacoesFuncionario();
+                fun6.Promover();
+                fun6.ImprimirInformacoesFuncionario();
+                
+                //Console.WriteLine($"Conta criada com sucesso");
             }
             catch (ArgumentException e)
             {
