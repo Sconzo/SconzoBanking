@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SconzoBank.Modelos;
 
 namespace SconzoBank
 {
@@ -12,7 +13,7 @@ namespace SconzoBank
         {
             try
             {
-                var conta = new Conta(0, 011, 111);
+                var conta = new Conta(2, 011, 1100);
             }
             catch (ArgumentException e)
             {

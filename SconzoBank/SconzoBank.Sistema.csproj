@@ -50,8 +50,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SconzoBank.Modelos\SconzoBank.Modelos.csproj">
-      <Project>{97a71c0c-8191-4233-8ea8-718170e165a8}</Project>
+    <ProjectReference Include="..\SconzoBanking.Modelos\SconzoBank.Modelos.csproj">
+      <Project>{ac7c9132-e39e-4d5d-ad13-f89567ea5c9c}</Project>
       <Name>SconzoBank.Modelos</Name>
     </ProjectReference>
   </ItemGroup>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SconzoBank
+namespace SconzoBank.Modelos
 {
     /// <summary>
     /// Esta eh a classe que define uma conta do BancoSconzo
