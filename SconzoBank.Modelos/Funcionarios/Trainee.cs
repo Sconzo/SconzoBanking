@@ -10,10 +10,8 @@ namespace SconzoBank.Modelos.Funcionarios
     public class Trainee : FuncionarioPadrao
     {
         public Trainee(string nome, string numero_cracha) 
-            : base(nome, numero_cracha)
+            : base(nome, numero_cracha,"Trainee",2500)
         {
-            Salario = _salarioTrainee;
-            Funcao = nameof(Trainee);
         }
 
         public override void AumentarSalario()
@@ -21,12 +19,12 @@ namespace SconzoBank.Modelos.Funcionarios
             Salario *= 1.2;
         }
 
-        public override void Promover()
-        {
-            
-            Funcao = nameof(SconzoBank.Modelos.Funcionarios.Junior);
-            Salario = _salarioJunior;
-        }
+        //public override void Promover()
+        //{
+        //    
+        //    Funcao = nameof(SconzoBank.Modelos.Funcionarios.Junior);
+        //    Salario = _salarioJunior;
+        //}
 
         public override double GetBonificacao()
         {

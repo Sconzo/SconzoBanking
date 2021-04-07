@@ -6,21 +6,19 @@ using System.Threading.Tasks;
 
 namespace SconzoBank.Modelos.Funcionarios
 {
-    public class Senior : FuncionarioPadrao
+    public class Socio : FuncionarioPadrao
     {
-        public Senior(string nome, string numero_cracha) 
-            : base(nome, numero_cracha,"Senior",8000)
-        {
-        }
+        public Socio(string nome, string numero_cracha) 
+            : base(nome, numero_cracha,"Socio", 12000){}
 
         public override void AumentarSalario()
         {
-            Salario *=1.3;
+            Salario *= 1.5;
         }
 
         public override double GetBonificacao()
         {
-            return Salario * 0.5;
+            return Salario;
         }
     }
 }

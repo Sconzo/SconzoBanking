@@ -14,22 +14,24 @@ namespace SconzoBank
         {
             try
             {
-                var fun1 = new Estagiario("Rodrigo","001");
-                var fun2 = new Estagiario("Sergio", "002");
-                var fun3 = new Estagiario("Soely", "003");
-                var fun4 = new Estagiario("Marina", "004");
-                var fun5 = new Estagiario("José", "005");
-                var fun6 = new Estagiario("Rosa", "006");
-
-                fun6.ImprimirInformacoesFuncionario();
-                fun6.AumentarSalario();
-                fun6.ImprimirInformacoesFuncionario();
-                fun6.Promover();
-                fun6.ImprimirInformacoesFuncionario();
-                fun6.Promover();
-                fun6.ImprimirInformacoesFuncionario();
                 
-                //Console.WriteLine($"Conta criada com sucesso");
+                var fun1 = new Estagiario("Rodrigo","001");
+                var fun2 = new Trainee("Sergio", "002");
+                var fun3 = new Junior("Soely", "003");
+                var fun4 = new Senior("Marina", "004");
+                var fun5 = new Socio("José", "005");
+                var fun6 = new Diretor("Rosa", "006");
+                var fun7 = new ChefeDepartamento("Luke", "007");
+
+                fun6.CriarContaSistemaProgram("123");
+                fun6.AutenticarFuncionario("234");
+                //fun7.CriarContaSistemaConsole();
+                
+                
+                
+                
+               // Console.WriteLine($"Senha {fun6.Nome}: {fun6.Senha}\n" +
+               //     $"Senha {fun7.Nome}: {fun7.Senha}");
             }
             catch (ArgumentException e)
             {
