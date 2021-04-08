@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="Clientes\Cliente.cs" />
     <Compile Include="Contas\Conta.cs" />
-    <Compile Include="Funcionarios\AutenticadorAuxiliar.cs" />
     <Compile Include="Funcionarios\CargoAcessoPermitido.cs" />
     <Compile Include="Funcionarios\ChefeDepartamento.cs" />
     <Compile Include="Funcionarios\Diretor.cs" />

@@ -23,9 +23,10 @@ namespace SconzoBank
                 var fun6 = new Diretor("Rosa", "006");
                 var fun7 = new ChefeDepartamento("Luke", "007");
 
-                fun6.CriarContaSistemaProgram("123");
-                fun6.AutenticarFuncionario("234");
-                //fun7.CriarContaSistemaConsole();
+                fun6.CriarContaSistema("Mortadela");
+                fun6.AutenticarFuncionario("Mortadela");
+                
+                
                 
                 
                 

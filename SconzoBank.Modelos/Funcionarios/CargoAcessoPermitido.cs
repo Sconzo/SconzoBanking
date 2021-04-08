@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace SconzoBank.Modelos.Funcionarios
 {
+    /// <summary>
+    /// Classe abstrata que implementa a interface que permite aos funcionarios terem 
+    /// acesso ao sistem interno do banco
+    /// </summary>
     public abstract class CargoAcessoPermitido :  FuncionarioPadrao, IPermissaoAcesso
     {
-
+        
         private GerenciadorSenha gerenciadorSenha = new GerenciadorSenha();
-        private AutenticadorAuxiliar autenticadorAuxiliar = new AutenticadorAuxiliar();
 
         public string Senha { get; internal set; }
         protected CargoAcessoPermitido(string nome, string numero_cracha,string funcao,double salario)
@@ -18,18 +21,43 @@ namespace SconzoBank.Modelos.Funcionarios
         {
         }
 
-        public void CriarContaSistemaConsole()
+        public void CriarContaSistema()
         {
-            gerenciadorSenha.DefinirSenhaConsole(this);
+            gerenciadorSenha.DefinirSenha(this);
         }
-        public void CriarContaSistemaProgram(string senha)
+        public void CriarContaSistema(string senha)
         {
-            gerenciadorSenha.DefinirSenhaProgram(this,senha);
+            gerenciadorSenha.DefinirSenha(this,senha);
         }
         
+        public bool AutenticarFuncionario()
+        {
+            Console.WriteLine("Digite a sua senha");
+            var senha = Console.ReadLine();
+            if (Senha == senha)
+            {
+                Console.WriteLine("Funcionario Autenticado");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Fucnionario não pode ser autenticado");
+                return false;
+            }
+        }
+
         public bool AutenticarFuncionario(string senha)
         {
-            return autenticadorAuxiliar.SenhasCoincidem(Senha,senha);           
+            if (Senha == senha)
+            {
+                Console.WriteLine("Funcionario Autenticado");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Fucnionario não pode ser autenticado");
+                return false;
+            }
         }
 
 

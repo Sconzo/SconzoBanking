@@ -6,8 +6,18 @@ using System.Threading.Tasks;
 
 namespace SconzoBank.Modelos.Funcionarios
 {
+    /// <summary>
+    /// Classe que confere se a senha criada esta dentro dos conformes
+    /// </summary>
     internal class GerenciadorSenha
     {
+
+        /// <summary>
+        /// Garante que a senha possui caracteres em maiúsculo e em minúsculo.
+        /// Também impede que a senha seja composta apenas por números
+        /// </summary>
+        /// <param name="senha"></param>
+        /// <returns></returns>
         private bool AutenticarSenha(string senha)
         {
             string upper = senha.ToUpper();
@@ -15,7 +25,11 @@ namespace SconzoBank.Modelos.Funcionarios
 
             return !(upper == senha || lower == senha);
         }
-        public void DefinirSenhaConsole(CargoAcessoPermitido cargoAcessoPermitido)
+        /// <summary>
+        /// Define a senha digitada pelo usuário
+        /// </summary>
+        /// <param name="cargoAcessoPermitido"></param>
+        public void DefinirSenha(CargoAcessoPermitido cargoAcessoPermitido)
         {
             Console.WriteLine("Sua senha deve conter caracteres em maiúsculo e em minúsculo");
             while (true)
@@ -44,7 +58,13 @@ namespace SconzoBank.Modelos.Funcionarios
             }
 
         }
-        public void DefinirSenhaProgram(CargoAcessoPermitido cargoAcessoPermitido ,string senha)
+
+        /// <summary>
+        /// Define a senha definida pelo programador
+        /// </summary>
+        /// <param name="cargoAcessoPermitido"></param>
+        /// <param name="senha"></param>
+        public void DefinirSenha(CargoAcessoPermitido cargoAcessoPermitido ,string senha)
         {
             cargoAcessoPermitido.Senha = senha;
         }
