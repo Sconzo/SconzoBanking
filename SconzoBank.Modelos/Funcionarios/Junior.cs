@@ -8,7 +8,7 @@ namespace SconzoBank.Modelos.Funcionarios
 {
     public class Junior : FuncionarioPadrao
     {
-        public Junior(string nome, string numero_cracha) 
+        public Junior(string nome, int numero_cracha) 
             : base(nome, numero_cracha,"Junior",4500)
         {
         }

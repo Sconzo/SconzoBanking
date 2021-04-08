@@ -9,7 +9,7 @@ namespace SconzoBank.Modelos.Funcionarios
     public class Estagiario : FuncionarioPadrao
     {
         
-        public Estagiario(string nome, string numero_cracha) 
+        public Estagiario(string nome, int numero_cracha) 
             : base(nome, numero_cracha,"Estagiario",1000) 
         {
         }

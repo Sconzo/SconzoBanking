@@ -8,7 +8,7 @@ namespace SconzoBank.Modelos.Funcionarios
 {
     public class Socio : FuncionarioPadrao
     {
-        public Socio(string nome, string numero_cracha) 
+        public Socio(string nome, int numero_cracha) 
             : base(nome, numero_cracha,"Socio", 12000){}
 
         public override void AumentarSalario()

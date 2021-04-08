@@ -8,7 +8,7 @@ namespace SconzoBank.Modelos.Funcionarios
 {
     public class Senior : FuncionarioPadrao
     {
-        public Senior(string nome, string numero_cracha) 
+        public Senior(string nome, int numero_cracha) 
             : base(nome, numero_cracha,"Senior",8000)
         {
         }

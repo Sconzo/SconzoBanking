@@ -9,19 +9,19 @@ namespace SconzoBank.Modelos
     public abstract class FuncionarioPadrao
     {
         public string Nome { get; set; }
-        public string NumeroCracha { get; set; }
+        public int NumeroCracha { get; set; }
         public string Funcao { get; set; }
         public double Salario { get; set; }
         public static int TotalFuncionarios { get; private set; } // a variável static diz respeito a classe
 
-        public FuncionarioPadrao(string nome, string numero_cracha, 
+        public FuncionarioPadrao(string nome, int numero_cracha, 
             string funcao, double salario) : this(nome, numero_cracha)
         {
             Salario = salario;
             Funcao = funcao;
         }
 
-        public FuncionarioPadrao(string nome, string numero_cracha)
+        public FuncionarioPadrao(string nome, int numero_cracha)
             
         {
             Nome = nome;

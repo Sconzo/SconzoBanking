@@ -8,7 +8,7 @@ namespace SconzoBank.Modelos.Funcionarios
 {
     public class ChefeDepartamento : CargoAcessoPermitido
     {
-        public ChefeDepartamento(string nome, string numero_cracha) 
+        public ChefeDepartamento(string nome, int numero_cracha) 
             : base(nome, numero_cracha,"Chefe de Departamento", 32000)
         {
         }

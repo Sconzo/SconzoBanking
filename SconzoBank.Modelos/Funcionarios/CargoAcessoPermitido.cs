@@ -16,7 +16,7 @@ namespace SconzoBank.Modelos.Funcionarios
         private GerenciadorSenha gerenciadorSenha = new GerenciadorSenha();
 
         public string Senha { get; internal set; }
-        protected CargoAcessoPermitido(string nome, string numero_cracha,string funcao,double salario)
+        protected CargoAcessoPermitido(string nome, int numero_cracha,string funcao,double salario)
             : base(nome, numero_cracha,funcao,salario)
         {
         }

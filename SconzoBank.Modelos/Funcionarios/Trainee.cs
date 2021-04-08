@@ -9,7 +9,7 @@ namespace SconzoBank.Modelos.Funcionarios
     
     public class Trainee : FuncionarioPadrao
     {
-        public Trainee(string nome, string numero_cracha) 
+        public Trainee(string nome, int numero_cracha) 
             : base(nome, numero_cracha,"Trainee",2500)
         {
         }

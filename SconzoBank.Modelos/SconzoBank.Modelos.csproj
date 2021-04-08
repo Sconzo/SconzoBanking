@@ -47,7 +47,7 @@
     <Compile Include="Funcionarios\ChefeDepartamento.cs" />
     <Compile Include="Funcionarios\Diretor.cs" />
     <Compile Include="Funcionarios\Estagiario.cs" />
-    <Compile Include="Funcionarios\Funcionario.cs" />
+    <Compile Include="Funcionarios\FuncionarioPadrao.cs" />
     <Compile Include="Funcionarios\GerenciadorSenha.cs" />
     <Compile Include="Funcionarios\IPermissaoAcesso.cs" />
     <Compile Include="Funcionarios\Junior.cs" />

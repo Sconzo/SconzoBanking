@@ -15,18 +15,22 @@ namespace SconzoBank
             try
             {
                 
-                var fun1 = new Estagiario("Rodrigo","001");
-                var fun2 = new Trainee("Sergio", "002");
-                var fun3 = new Junior("Soely", "003");
-                var fun4 = new Senior("Marina", "004");
-                var fun5 = new Socio("José", "005");
-                var fun6 = new Diretor("Rosa", "006");
-                var fun7 = new ChefeDepartamento("Luke", "007");
+                var fun1 = new Estagiario("Rodrigo",1);
+                var fun2 = new Trainee("Sergio", 2);
+                var fun3 = new Junior("Soely", 3);
+                var fun4 = new Senior("Marina", 4);
+                var fun5 = new Socio("José", 5);
+                var fun6 = new Diretor("Rosa", 6);
+                var fun7 = new ChefeDepartamento("Luke", 7);
 
-                fun6.CriarContaSistema("Mortadela");
-                fun6.AutenticarFuncionario("Mortadela");
+                //fun3.ImprimirInformacoesFuncionario();
+
+                //fun7.CriarContaSistema();
+                //fun6.AutenticarFuncionario("Mortadela");
+
                 
-                
+                //ConexaoMySQL.Conectando(fun1);
+                ConexaoMySQL.Conectando(fun1);
                 
                 
                 
