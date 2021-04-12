@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Humanizer, Version=2.8.0.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Humanizer.Core.2.8.26\lib\netstandard2.0\Humanizer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,7 +45,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clientes\Cliente.cs" />
+    <Compile Include="Contas\AberturaContaException.cs" />
+    <Compile Include="Contas\CartaoCredito.cs" />
     <Compile Include="Contas\Conta.cs" />
+    <Compile Include="Contas\ContaCorrente.cs" />
+    <Compile Include="Contas\ContaEletronica.cs" />
+    <Compile Include="Contas\ContaPoupanca.cs" />
+    <Compile Include="Contas\ContaSalario.cs" />
+    <Compile Include="Contas\CriadoraNumeroCartaoAleatorio.cs" />
+    <Compile Include="Contas\OperacaoFinanceiraException.cs" />
     <Compile Include="Funcionarios\CargoAcessoPermitido.cs" />
     <Compile Include="Funcionarios\ChefeDepartamento.cs" />
     <Compile Include="Funcionarios\Diretor.cs" />
@@ -55,6 +66,9 @@
     <Compile Include="Funcionarios\Socio.cs" />
     <Compile Include="Funcionarios\Trainee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

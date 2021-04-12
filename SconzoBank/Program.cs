@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SconzoBank.Modelos;
+using SconzoBank.Modelos.Contas;
 using SconzoBank.Modelos.Funcionarios;
 
 namespace SconzoBank
@@ -14,8 +15,27 @@ namespace SconzoBank
         {
             try
             {
-                
-                var fun1 = new Estagiario("Rodrigo",1);
+                var conta1 = new ContaCorrente(12, 21, 1000,"adalberto");
+                conta1.cartao_credito.ImprimirInformacoesCartaoCredito();
+               
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            
+
+            Console.Read();
+        }
+
+
+
+        static void CriarFuncionarios()
+        {
+            try
+            {
+
+                var fun1 = new Estagiario("Rodrigo", 1);
                 var fun2 = new Trainee("Sergio", 2);
                 var fun3 = new Junior("Soely", 3);
                 var fun4 = new Senior("Marina", 4);
@@ -23,32 +43,23 @@ namespace SconzoBank
                 var fun6 = new Diretor("Rosa", 6);
                 var fun7 = new ChefeDepartamento("Luke", 7);
 
-                //fun3.ImprimirInformacoesFuncionario();
+                fun3.ImprimirInformacoesFuncionario();
 
                 //fun7.CriarContaSistema();
                 //fun6.AutenticarFuncionario("Mortadela");
-
-                
                 //ConexaoMySQL.Conectando(fun1);
-                ConexaoMySQL.Conectando(fun1);
-                
-                
-                
-                
-               // Console.WriteLine($"Senha {fun6.Nome}: {fun6.Senha}\n" +
-               //     $"Senha {fun7.Nome}: {fun7.Senha}");
+                //ConexaoMySQL.Conectando(fun1);
+                // Console.WriteLine($"Senha {fun6.Nome}: {fun6.Senha}\n" +
+                //     $"Senha {fun7.Nome}: {fun7.Senha}");
             }
             catch (ArgumentException e)
             {
 
                 Console.WriteLine(e.Message);
             }
-           
-            
-            
-            
 
-            Console.Read();
+
+
         }
     }
 }

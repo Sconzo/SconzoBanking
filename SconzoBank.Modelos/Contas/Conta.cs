@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SconzoBank.Modelos.Contas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,8 +10,9 @@ namespace SconzoBank.Modelos
     /// <summary>
     /// Esta eh a classe que define uma conta do BancoSconzo
     /// </summary>
-    public class Conta
+    public abstract class Conta
     {
+        static readonly double DEPOSITO_MINIMO = 500;
         public int NumeroConta { get; set; }
         public int NumeroAgencia { get; set; }
         public double Saldo { get; set; }
@@ -28,10 +30,9 @@ namespace SconzoBank.Modelos
                     $" e {nameof(numero_agencia) } devem ser ambos maiores que zero");
             }
 
-            if (deposito_inicial < 500)
+            if (deposito_inicial < DEPOSITO_MINIMO)
             {
-                throw new ArgumentException("Para abrir uma conta no Sconzo Bank é necessário" +
-                    $"um {nameof(deposito_inicial)} de ao menos R$500  ");
+                throw new AberturaContaException(deposito_inicial, DEPOSITO_MINIMO);
             }
 
             NumeroAgencia = numero_agencia;
