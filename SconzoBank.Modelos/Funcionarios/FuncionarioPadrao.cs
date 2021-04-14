@@ -45,8 +45,7 @@ namespace SconzoBank.Modelos
                 $"Num Cracha ------------> {NumeroCracha}\n" +
                 $"Funcao: ---------------> {Funcao}\n" +
                 $"Salario ---------------> {Salario}\n" +
-                $"Bonificacao -----------> {GetBonificacao()}\n" +
-                $"Total de Funcionarios -> {FuncionarioPadrao.TotalFuncionarios}\n");
+                $"Bonificacao -----------> {GetBonificacao()}\n");
         }
 
     }

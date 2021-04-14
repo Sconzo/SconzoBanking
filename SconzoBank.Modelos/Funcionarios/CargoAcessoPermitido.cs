@@ -23,6 +23,8 @@ namespace SconzoBank.Modelos.Funcionarios
 
         public void CriarContaSistema()
         {
+            Console.WriteLine($"Olá {Nome}, como você é {Funcao} você precisa criar uma " +
+                $"senha para acessar o nosso sistema interno\n");
             gerenciadorSenha.DefinirSenha(this);
         }
         public void CriarContaSistema(string senha)

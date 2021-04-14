@@ -11,6 +11,7 @@ namespace SconzoBank.Modelos.Funcionarios
         public Diretor(string nome, int numero_cracha) 
             : base(nome, numero_cracha,"Diretor",21000)
         {
+            CriarContaSistema();
         }
 
         public override void AumentarSalario()

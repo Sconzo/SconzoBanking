@@ -15,8 +15,9 @@ namespace SconzoBank
         {
             try
             {
-                var conta1 = new ContaCorrente(12, 21, 1000,"adalberto");
-                conta1.cartao_credito.ImprimirInformacoesCartaoCredito();
+                var funcionarios_todos = CriarFuncionarios();
+                AdicionarFuncionariosDB(funcionarios_todos.Item1, funcionarios_todos.Item2);
+
                
             }
             catch(Exception e)
@@ -30,11 +31,14 @@ namespace SconzoBank
 
 
 
-        static void CriarFuncionarios()
+        static (List<FuncionarioPadrao>,List<CargoAcessoPermitido>) CriarFuncionarios()
         {
+            List<FuncionarioPadrao> funcionarios = new List<FuncionarioPadrao>();
+            List<CargoAcessoPermitido> superiores = new List<CargoAcessoPermitido>();
+
             try
             {
-
+                
                 var fun1 = new Estagiario("Rodrigo", 1);
                 var fun2 = new Trainee("Sergio", 2);
                 var fun3 = new Junior("Soely", 3);
@@ -43,14 +47,13 @@ namespace SconzoBank
                 var fun6 = new Diretor("Rosa", 6);
                 var fun7 = new ChefeDepartamento("Luke", 7);
 
-                fun3.ImprimirInformacoesFuncionario();
+                funcionarios.AddRange(new FuncionarioPadrao[] { fun1, fun2, fun3, fun4, fun5});
+                superiores.AddRange(new CargoAcessoPermitido[] { fun6, fun7 });
 
-                //fun7.CriarContaSistema();
-                //fun6.AutenticarFuncionario("Mortadela");
-                //ConexaoMySQL.Conectando(fun1);
-                //ConexaoMySQL.Conectando(fun1);
-                // Console.WriteLine($"Senha {fun6.Nome}: {fun6.Senha}\n" +
-                //     $"Senha {fun7.Nome}: {fun7.Senha}");
+                foreach (var funcioanrio in funcionarios) funcioanrio.ImprimirInformacoesFuncionario();
+                    
+                foreach (var superior in superiores) superior.ImprimirInformacoesFuncionario();
+                
             }
             catch (ArgumentException e)
             {
@@ -58,8 +61,17 @@ namespace SconzoBank
                 Console.WriteLine(e.Message);
             }
 
+            return (funcionarios,superiores);
 
+        }
 
+        static void AdicionarFuncionariosDB(List<FuncionarioPadrao> funcionarios, List<CargoAcessoPermitido> superiores)
+        {
+
+            foreach (var funcionario in funcionarios) ConexaoMySQL.Conectando(funcionario);
+            foreach (var superior in superiores) ConexaoMySQL.Conectando(superior);
+            Console.WriteLine("Connection Closed. Press any key to exit...");
+            Console.Read();
         }
     }
 }

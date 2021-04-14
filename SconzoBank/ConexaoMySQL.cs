@@ -24,8 +24,8 @@ namespace SconzoBank
         private static void  Conectando(FuncionarioPadrao funcionario, string senha)
         {
             //your MySQL connection string  funcionarios_SconzoBanking
-            string connStr = "server=localhost;user=root;database=sconzo_banking_funcionarios;port=3306;password=Tilapi@123";
-
+            string connStr = "server=localhost;user=root;database=sconzo_banking_funcionarios;port=3306;password=Abobrinh@123";
+            Criptografia crip = new Criptografia();
             MySqlConnection conn = new MySqlConnection(connStr);
             try
             {
@@ -50,7 +50,9 @@ namespace SconzoBank
                 //SQL Query to execute
                 //insert Query
                 // we are inserting actor_id, first_name, last_name, last_updated columns data
-                string write_sql = $"INSERT INTO informacao_funcionarios VALUES ('{funcionario.Nome}',{funcionario.NumeroCracha},'{funcionario.Funcao}',{funcionario.Salario},'{senha}')";
+                string write_sql = $"INSERT INTO informacao_funcionarios VALUES ('{funcionario.Nome}'" +
+                    $",{funcionario.NumeroCracha},'{funcionario.Funcao}'," +
+                    $"{funcionario.Salario},'{crip.CriarMD5(senha)}')";
                 MySqlCommand write_cmd = new MySqlCommand(write_sql, conn);
                 write_cmd.ExecuteNonQuery();
             }
@@ -60,8 +62,8 @@ namespace SconzoBank
             }
 
             conn.Close();
-            Console.WriteLine("Connection Closed. Press any key to exit...");
-            Console.Read();
+            //Console.WriteLine("Connection Closed. Press any key to exit...");
+            //Console.Read();
         }
     }
 }
