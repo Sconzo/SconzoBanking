@@ -15,10 +15,11 @@ namespace SconzoBank
         {
             try
             {
-                var funcionarios_todos = CriarFuncionarios();
-                AdicionarFuncionariosDB(funcionarios_todos.Item1, funcionarios_todos.Item2);
+                Cliente eu = new Cliente("Rodrigo","48498465800");
 
-               
+                var minha = new ContaCorrente(123, 001, 500, eu);
+
+                minha.cartao_credito.ImprimirInformacoesCartaoCredito();
             }
             catch(Exception e)
             {

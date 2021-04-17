@@ -16,13 +16,14 @@ namespace SconzoBank.Modelos
         public int NumeroConta { get; set; }
         public int NumeroAgencia { get; set; }
         public double Saldo { get; set; }
+        public string Titular { get; set; }
         /// <summary>
         /// Cria um objeto do tipo conta
         /// </summary>
         /// <param name="numero_conta"> O valor de <see cref="nameof(numeroconta)"/> deve ser maior que 0 </param> 
         /// <param name="numero_agencia">O valor de <see cref="nameof(numero_agencia)"/> deve ser maior que 0 </param>
         /// <param name="deposito_inicial">O valor de <see cref="nameof(deposito_inicial)"/> deve ser maior que 500</param>
-        public Conta (int numero_conta,int numero_agencia,double deposito_inicial)
+        public Conta (int numero_conta,int numero_agencia,double deposito_inicial,Cliente cliente)
         {
 
             if (numero_conta <= 0 || numero_agencia <= 0){
@@ -38,6 +39,9 @@ namespace SconzoBank.Modelos
             NumeroAgencia = numero_agencia;
             NumeroConta = numero_conta;
             Saldo = deposito_inicial;
+            Titular = cliente.Nome;
+
+            Console.WriteLine("Conta aberta com sucesso");
         }
 
         public void AdicionarFundos(double valor)

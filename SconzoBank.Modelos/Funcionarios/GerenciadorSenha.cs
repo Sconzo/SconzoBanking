@@ -52,7 +52,7 @@ namespace SconzoBank.Modelos.Funcionarios
                     }
                     else
                     {
-                        Console.WriteLine("A senha não é forte o sufuciente");
+                        Console.WriteLine("A senha não é forte o suficiente");
                     }
                 }
             }

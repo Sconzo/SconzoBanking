@@ -14,13 +14,13 @@ namespace SconzoBank.Modelos.Contas
         public CartaoCredito cartao_credito = new CartaoCredito();
         GeradorAleatorio geradorAleatorio = new GeradorAleatorio();
         public ContaCorrente(int numero_conta, int numero_agencia, 
-            double deposito_inicial,string nome)
-            :base(numero_conta,numero_agencia,deposito_inicial)
+            double deposito_inicial,Cliente cliente)
+            :base(numero_conta,numero_agencia,deposito_inicial,cliente)
         {
             cartao_credito.NumeroCartao = geradorAleatorio.CriarNumeroCartao();
             cartao_credito.CSV = geradorAleatorio.CriarCSV();
             cartao_credito.Validade =$"{DateTime.Now.Month}/{DateTime.Now.Year + 4}";
-            cartao_credito.TitularCartao = nome;
+            cartao_credito.TitularCartao = cliente.Nome;
             cartao_credito.LimiteCartao = 0;
             cartao_credito.Bloqueado = true;
         }
